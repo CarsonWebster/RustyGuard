@@ -16,9 +16,9 @@ RustyGuard is an Intrusion Detection System that leverages the efficiency of the
 
 ### Planning
 
-- [ ] Conduct research on existing IDS models.
+- [ X ] Conduct research on existing IDS models.
 - [ ] Outline project scope with precise requirements.
-- [ ] Select appropriate Rust crates for network functionality (e.g., `libpnet`, `tokio`).
+- [ X ] Selected appropriate Rust crates for network functionality (`pnet & ipnet`)
 
 ### Development
 

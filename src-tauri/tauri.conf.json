@@ -7,7 +7,7 @@
 		"distDir": "../build"
 	},
 	"package": {
-		"productName": "skeleton-starter-tauri",
+		"productName": "rustyguard",
 		"version": "0.1.0"
 	},
 	"tauri": {
@@ -58,9 +58,23 @@
 				"fullscreen": false,
 				"height": 600,
 				"resizable": true,
-				"title": "Skeleton starter Tauri",
+				"title": "RustyGuard",
 				"width": 800
 			}
-		]
+		],
+		"cli": {
+			"description": "Intrusion Detection System (IDS) application designed in Rust and SvelteKit packaged with Tauri.",
+			"longDescription": "RustyGuard is an Intrusion Detection System that leverages the efficiency of the Rust programming language to monitor and filter malicious network traffic in real-time. It combines a high-performance backend with an intuitive SvelteKit based frontend, enabling users to easily configure the system via a Tauri packaged desktop application.",
+			"beforeHelp": "Before help message",
+			"afterHelp": "After help message",
+			"args": [
+				{
+					"name": "echo",
+					"short": "e",
+					"takesValue": false,
+					"multiple": false
+				}
+			]
+		}
 	}
 }
