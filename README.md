@@ -16,9 +16,9 @@ RustyGuard is an Intrusion Detection System that leverages the efficiency of the
 
 ### Planning
 
-- [ X ] Conduct research on existing IDS models.
+- [x] Conduct research on existing IDS models.
 - [ ] Outline project scope with precise requirements.
-- [ X ] Selected appropriate Rust crates for network functionality (`pnet & ipnet`)
+- [x] Selected appropriate Rust crates for network functionality (`pnet & ipnet`)
 
 ### Development
 
@@ -55,3 +55,11 @@ RustyGuard is an Intrusion Detection System that leverages the efficiency of the
 - [ ] Package the application for MacOS, Linux, and Windows, including icons and assets.
 - [ ] Document the setup, dependencies, configuration guides, and use-cases of RustyGuard.
 - [ ] Release the first version on GitHub under the releases section.
+
+### Credits and References
+
+Shout out to the book ["Network Programming with Rust: Build fast and resilient network servers and clients by leveraging Rust's memory-safety and concurrency features" by Abhishek Chanda](https://www.packtpub.com/product/network-programming-with-rust/9781788624893) for the higher level understanding of networking details and rust implementation examples.
+
+Also checkout the [Rust Programming Language](https://www.rust-lang.org/), [SvelteKit](https://kit.svelte.dev/), and [Tauri](https://tauri.studio/). Their tooling and documentation made this project possible.
+
+Lastly, thanks to [SkeletonUI](https://www.skeleton.dev/) for providing execelent CSS styles and components for the frontend.
