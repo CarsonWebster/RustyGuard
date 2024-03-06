@@ -3,6 +3,6 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
-		<h1 class="h1">RustyGuard️</h1>
+		<h1 class="h1">Home Page️</h1>
 	</div>
 </div>
