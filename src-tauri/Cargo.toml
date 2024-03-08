@@ -1,10 +1,10 @@
 [package]
 name = "rustyguard"
 version = "0.1.0"
-description = "Intrusion Detection System (IDS) application designed in Rust and SvelteKit packaged with Tauri"
+description = "Intrusion Detection System (IDS) application designed in Rust and SvelteKit packaged with Tauri."
 authors = ["Carson Webster"]
 license = ""
-repository = "https://github.com/carsonwebster/RustyGuard"
+repository = "https://github.com/carsonwebster/rustyguard"
 default-run = "rustyguard"
 edition = "2021"
 rust-version = "1.60"
@@ -17,8 +17,7 @@ tauri-build = { version = "1.5.1", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.6.0", features = [ "api-all", "cli"] }
-pnet = "0.34.0"
+tauri = { version = "1.6.0", features = ["api-all"] }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
