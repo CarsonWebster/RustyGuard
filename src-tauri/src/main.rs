@@ -16,6 +16,41 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
+async fn start_counting(window: Window) -> Result<(), String> {
+    use tauri::api::process::{Command, CommandEvent};
+    use tauri::async_runtime::spawn;
+
+    let (mut rx, _child) = Command::new("pkexec")
+        .args(["src/count-x86_64-unknown-linux-gnu"])
+        .spawn()
+        .expect("failed to create `count` binary command");
+
+    spawn(async move {
+        while let Some(event) = rx.recv().await {
+            match event {
+                CommandEvent::Stdout(line) => {
+                    window
+                        .emit("count", line)
+                        .expect("failed to emit event");
+                },
+                CommandEvent::Stderr(line) => {
+                    eprintln!("Error: {}", line);
+                },
+                CommandEvent::Error(code) => {
+                    println!("Exited with code: {}", code);
+                },
+                CommandEvent::Terminated(payload) => {
+                    println!("Terminated by signal: {}", payload.signal.unwrap_or(0));
+                },
+                _ => (),
+            }
+        }
+    });
+
+    Ok(())
+}
+
+#[tauri::command]
 fn get_network_interfaces() -> Vec<String> {
     pnet::datalink::interfaces()
         .into_iter()
@@ -64,6 +99,7 @@ fn main() {
         })
         .invoke_handler(tauri::generate_handler![
             greet,
+            start_counting,
             get_network_interfaces,
             start_packet_sniffing,
             stop_packet_sniffing

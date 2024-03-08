@@ -12,7 +12,13 @@
 	},
 	"tauri": {
 		"allowlist": {
-			"all": true
+			"all": true,
+			"shell": {
+				"sidecar": true,
+				"scope": [
+					{ "name": "src/count", "sidecar": true }
+				]
+			}
 		},
 		"bundle": {
 			"active": true,
@@ -21,7 +27,9 @@
 			"deb": {
 				"depends": []
 			},
-			"externalBin": [],
+			"externalBin": [
+				"src/count"
+			],
 			"icon": [
 				"icons/32x32.png",
 				"icons/128x128.png",
@@ -29,7 +37,7 @@
 				"icons/icon.icns",
 				"icons/icon.ico"
 			],
-			"identifier": "com.tauri.dev",
+			"identifier": "com.carsonwebster.rustyguard",
 			"longDescription": "",
 			"macOS": {
 				"entitlements": null,
