@@ -3,6 +3,7 @@
 
 mod packet_sniffer;
 use packet_sniffer::get_network_interfaces;
+use packet_sniffer::log_packets;
 
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -11,7 +12,11 @@ fn greet(name: &str) -> String {
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet, get_network_interfaces])
+        .invoke_handler(tauri::generate_handler![
+            greet,
+            get_network_interfaces,
+            log_packets
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
